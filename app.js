@@ -1,4 +1,3 @@
-const http = require('http');
 const express = require('express');
 
 app = express();
@@ -9,7 +8,7 @@ app.use((req, res, next) => {
 
 app.use((req, res, next) => {
   console.log('in second mw function');
+  res.send('<h1>Testing</h1>');
 });
 
-const server = http.createServer(app);
-server.listen(3000);
+app.listen(3000);
